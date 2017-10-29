@@ -10,13 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 routes(app);
 
-var config = {
-  apiKey: 'AIzaSyCJ-DnQ_JJjsgZE-pfUDJPl5HxkHKQsnx8',
-  authDomain: 'netflu-be067.firebaseapp.com',
-  databaseURL: 'https://netflu-be067.firebaseio.com'
-
-};
-
+var config = require('./config.json');
 let firebaseApp = firebase.initializeApp(config);
 
 app.use(express.static(path.join(__dirname, 'public')));
