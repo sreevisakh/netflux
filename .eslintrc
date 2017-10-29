@@ -1,0 +1,58 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "env": {
+    "browser": true,
+    "es6":true,
+    "jest": true
+  },
+  "parserOptions":{
+    "ecmaFeatures" :{
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "plugins":[
+    "react"
+  ],
+  "rules": {
+    "import/no-unresolved": 0,
+    "no-multiple-empty-lines": ["error", {"max": 1, "maxEOF": 1}],
+    "accessor-pairs": 0,
+    "brace-style": [2, "1tbs"],
+    "consistent-return": 2,
+    "dot-location": [2, "property"],
+    "dot-notation": 2,
+    "eol-last": 2,
+    "eqeqeq": [2, "allow-null"],
+    "indent": [2, 2, { "SwitchCase" : 1}],
+    "jsx-quotes": [2, "prefer-double"],
+    "new-cap": 0,
+    "no-bitwise": 0,
+    "no-inner-declarations": [2, "functions"],
+    "no-multi-spaces": 2,
+    "no-restricted-syntax": [2, "WithStatement"],
+    "no-shadow": 2,
+    "no-unused-expressions": 2,
+    "no-unused-vars": [2, { "args" : "none"}],
+    "quotes": [2, "single", "avoid-escape"],
+    "space-before-blocks": 2,
+    "import/extensions": 0,
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "import/prefer-default-export": 0,
+    "no-prototype-builtins": 0,
+    "react/prefer-stateless-function": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/href-no-hash": 0,
+    "jsx-a11y/label-has-for": 0,
+    "react/jsx-no-bind": 0,
+    "global-require": 0,
+    "semi": 0,
+    "arrow-parens": 0,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-uses-react": 2,
+    "react/react-in-jsx-scope": 2,
+    "no-trailing-spaces": 0
+  }
+}
