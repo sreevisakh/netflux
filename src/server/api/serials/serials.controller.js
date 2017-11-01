@@ -42,3 +42,16 @@ export async function add (req, res) {
     res.status(500).send(error)
   }
 }
+
+export async function download (req, res) {
+  try {
+    console.log('Fetching URLs for', req.params)
+    const serialService = new EWatchSeriesService()
+    let link = await serialService.download(req.params)
+    let [status, next] = await model.updateStatus(req.params)
+    console.log('Updated Watch Status')
+    res.send({link, status, next})
+  } catch (error) {
+    res.status(500).send(error)
+  }
+}

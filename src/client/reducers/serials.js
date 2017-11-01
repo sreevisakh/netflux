@@ -1,6 +1,7 @@
 let initialState = {
   list: [],
-  results: []
+  results: [],
+  data: {}
 }
 
 export default function serials (state = initialState, {type, payload}) {
@@ -14,6 +15,16 @@ export default function serials (state = initialState, {type, payload}) {
       return {
         ...state,
         list: payload
+      }
+    case 'GET':
+      return {
+        ...state,
+        details: payload
+      }
+    case 'DOWNLOAD':
+      return {
+        ...state,
+        data: payload
       }
     default:
       return state

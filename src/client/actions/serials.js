@@ -28,3 +28,23 @@ export function loadSerials () {
       }, error => dispatch({type: 'LIST_REJECTED', error}))
   }
 }
+
+export function loadSerial (serial) {
+  return dispatch => {
+    fetch(`${backend}/api/serials/get/${serial}`)
+      .then(response => response.json())
+      .then(response => {
+        dispatch({type: 'GET', payload: response})
+      }, error => dispatch({type: 'GET_REJECTED', error}))
+  }
+}
+
+export function download (serial, season, episode) {
+  return dispatch => {
+    fetch(`${backend}/api/serials/download/${serial}/${season}/${episode}`)
+      .then(response => response.json())
+      .then(response => {
+        dispatch({type: 'DOWNLOAD', payload: response})
+      }, error => dispatch({type: 'DOWNLOAD_REJECTED', error}))
+  }
+}

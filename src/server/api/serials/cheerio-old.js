@@ -42,10 +42,10 @@ exports.getResult = function (req, res) {
   var defered = q.defer();
   findEpisodeRangeInSeason(req.body.url, req.body.season).then(function (range) {
     url = url.replace('/serie/', '/episode/');
-    url = url + '_s' + season + '_e${id}.html';
+    url = url + '_s' + season + '_e{id}.html';
     _.each(range, function (id) {
       var name = util.findName(url) + ' S' + ('0' + util.findSeason(url)).slice(-2) + 'E' + ('0' + id).slice(-2);
-      var subUrl = url.replace('${id}', id);
+      var subUrl = url.replace('{id}', id);
       htmlPromises.push(getHtml(subUrl, name));
     });
     return q.allSettled(htmlPromises);

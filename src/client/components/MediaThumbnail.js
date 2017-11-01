@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default class MediaThumbnail extends React.Component {
-  render() {
+  render () {
     let { serial } = this.props;
     return (
-      <div className="col">
+      <div className="col-2">
         <div className="card">
           <img className="card-img-top" src={serial.image} alt="Card image cap" />
           <div className="card-body">
